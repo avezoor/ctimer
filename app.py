@@ -7,11 +7,10 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Create Flask application
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "default_secret_key_for_development")
+app.secret_key = os.environ.get("SESSION_SECRET", "avezoor_key")
 
 @app.route('/')
 def index():
-    """Render the main countdown timer page."""
     return render_template('index.html')
 
 # Add error handlers
